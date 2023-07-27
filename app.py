@@ -69,6 +69,10 @@ def set_scenario():
         app.config["FINANCE_PACKAGE_URL"] + "/scenario",
         json=scenario
     )
+
+    import logging
+    logging.basicConfig(level=logging.INFO)
+
     response.raise_for_status()
 
     return redirect('/')
